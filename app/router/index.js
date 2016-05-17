@@ -4,6 +4,7 @@ import MovieRouter from './movie-router';
 import PersonRouter from './person-router';
 import SearchRouter from './search-router';
 import TestRouter from './test-router';
+import FromageRouter from './fromage-router';
 
 export const registerRoutes = () => {
     new AdminRouter();
@@ -12,4 +13,5 @@ export const registerRoutes = () => {
     new PersonRouter();
     new SearchRouter();
     new TestRouter();
+    new FromageRouter();
 };

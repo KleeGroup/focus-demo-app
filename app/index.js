@@ -1,8 +1,10 @@
 import 'babel-preset-focus/dist/focus-polyfill';
-
 import focusDemoConf from '../package.json';
 import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
+
+import Dropzone from 'dropzone';
+window.Dropzone = Dropzone;
 
 console.info(
     `

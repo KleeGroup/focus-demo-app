@@ -17,12 +17,18 @@ export default React.createClass({
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movieCaracteristics', 'movieSynopsis']}],
 
+    changePoster(path) {
+        this.setState({
+            poster: "http://localhost:9998/" + path.replace('\\', '/')
+        });
+    },
+
     /** @inheritDoc */
     renderContent() {
         const {title, poster, trailerHRef} = this.state;
         return (
             <div data-demo='header-content-expanded'>
-                <Poster poster={poster} title={title} hasZoom={true} />
+                <Poster poster={poster} title={title} hasZoom={true} changePoster={this.changePoster} />
                 <div data-demo='header-content-expanded__infos'>
                     <div className="key-concept">{translate('view.movie.keyConcept.name')}</div>
                     <h3>{this.textFor('title')}</h3>
